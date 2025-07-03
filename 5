@@ -1,0 +1,19 @@
+while True:
+    pop_a = int(input("População do país A: "))
+    pop_b = int(input("População do país B: "))
+    taxa_a = float(input("Taxa de crescimento de A (%): ")) / 100
+    taxa_b = float(input("Taxa de crescimento de B (%): ")) / 100
+
+    if pop_a > 0 and pop_b > 0 and taxa_a > 0 and taxa_b > 0:
+        anos = 0
+        while pop_a <= pop_b:
+            pop_a += pop_a * taxa_a
+            pop_b += pop_b * taxa_b
+            anos += 1
+        print(f"A população de A ultrapassará B em {anos} anos.")
+    else:
+        print("Dados inválidos. Tente novamente.")
+
+    repetir = input("Deseja repetir? (s/n): ").lower()
+    if repetir != 's':
+        break
